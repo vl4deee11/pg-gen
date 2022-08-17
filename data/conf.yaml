@@ -1,0 +1,94 @@
+insertBatchSize: 1000
+maxConcurrency: 50
+type: memory
+tables:
+#  - name: orders
+#    rowCount: 13000000
+#    fields:
+#      - name: id
+#        type: uniq_bigint
+#      - name: store_id
+#        type: uniq_bigint
+#      - name: display_id
+#        type: uniq_text
+#  - name: orders_couriers
+#    rowCount: 13000000
+#    fields:
+#      - name: order_code
+#        type: uniq_text
+#      - name: courier_identifier
+#        type: text
+#      - name: updated_at
+#        type: timestamptz
+#      - name: arrival_time
+#        type: timestamptz
+#        nullable: true
+#      - name: courier_is_close_notified_at
+#        type: timestamptz
+#        nullable: true
+#      - name: courier_at_restaurant_notified_at
+#        type: timestamptz
+#        nullable: true
+#      - name: picked_up_notified_at
+#        type: timestamptz
+#        nullable: true
+#      - name: status
+#        type: text
+#        nullable: true
+#      - name: courier_late_notified_at
+#        type: timestamptz
+#        nullable: true
+#      - name: courier_changed_notified_at
+#        type: timestamptz
+#        nullable: true
+  - name: table_a
+    rowCount: 1000000
+    fields:
+      - name: a1
+        type: uniq_int
+      - name: a2
+        type: text
+      - name: a3
+        type: timetz
+        nullable: true
+      - name: a4
+        type: int
+        genParams:
+          - 0
+          - 11
+        nullable: false
+#  - name: table_b
+#    rowCount: 1000000
+#    fields:
+#      - name: b1
+#        type: uniq_int
+#      - name: b2
+#        type: uniq_text
+#  - name: c
+#    rowCount: 500000
+#    fields:
+#      - name: c1
+#        type: pk
+#        genParams:
+#          - table_a
+#          - a1
+#      - name: c2
+#        type: pk
+#        genParams:
+#          - m2m
+#          - m2m1
+#  - name: m2m
+#    rowCount: 967000
+#    fields:
+#      - name: m2m1
+#        type: uniq_int
+#      - name: m2m_a
+#        type: uniq_pk
+#        genParams:
+#          - table_a
+#          - a1
+#      - name: m2m_b
+#        type: uniq_pk
+#        genParams:
+#          - table_b
+#          - b1

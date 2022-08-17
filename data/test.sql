@@ -1,0 +1,26 @@
+CREATE TABLE table_a
+(
+    a1 INT  NOT NULL UNIQUE,
+    a2 TEXT NOT NULL,
+    a3 TIME WITH TIME ZONE,
+    a4 INT  NOT NULL
+);
+
+CREATE TABLE table_b
+(
+    b1 INT NOT NULL UNIQUE,
+    b2 TEXT UNIQUE
+);
+
+CREATE TABLE m2m
+(
+    m2m1  INT                         NOT NULL UNIQUE,
+    m2m_a INT REFERENCES table_a (a1) NOT NULL UNIQUE,
+    m2m_b INT REFERENCES table_b (b1) NOT NULL UNIQUE
+);
+
+CREATE TABLE c
+(
+    c1 INT REFERENCES table_a (a1) NOT NULL,
+    c2 INT REFERENCES m2m (m2m1)   NOT NULL
+);
